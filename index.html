@@ -8,18 +8,18 @@
 <span>{{hello}}</span>
 
 <form>
-    <input model="location" type="text"/>
-    <input ng-click="checkWeather(location)" type="button" value="Check my location!"/>
+    <input model="user.location" type="text" />
+    <input ng-click="checkWeather(user.location)" type="button" value="Check my location!" />
 </form>
 
 <span>You entered location: {{location_entered}}</span>
 
-<!--<ul>
-    <li ng-repeat="phone in phones">
-        <span>{{phone.name}}</span>
-        <p>{{phone.snippet}}</p>
-    </li>
-</ul>-->
+<!-- <ul>
+   <li ng-repeat="phone in phones">
+     <span>{{phone.name}}</span>
+     <p>{{phone.snippet}}</p>
+   </li>
+ </ul>!-->
 
 </body>
 </html>
