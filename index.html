@@ -58,16 +58,17 @@
 <!--<span>You entered location: {{location_entered}}</span>!-->
 <br/>
 <div class="col-lg-12 text-center">
-    <h1 class="section-title">The Temperature is: <span>{{temperature}}</span></h1>
+    <h1 class="section-title">The Temperature is: <span ng-model="temperature">{{temperature}}</span></h1>
 </div>
 
 
-<!-- <ul>
-    <li ng-repeat="phone in phones">
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>!-->
+<!-- ANIMALS =========================================================== -->
+<div class="row">
+
+    <div class="col-lg-12">
+        <img ng-src="{{ image }}" class="img-responsive img-thumbnail"  ng-show="image"/>
+    </div>
+</div>
 
 </body>
 </html>

@@ -39,9 +39,73 @@ weatherApp.controller('weatherCtrl', function ($scope, $http) {
             }).then(function successCallback(response) {
                 console.log("Got success!", response);
                 $scope.temperature = response.data.main.temp;
+
+                if (format === 'Fahrenheit') {
+
+                    if ($scope.temperature <= 90) {
+                        $scope.image = 'http://cdn.meme.am/instances/500x/61742507.jpg';
+                    }
+                    if ($scope.temperature <= 70) {
+                        $scope.image = "http://i.imgur.com/AVWau0L.jpg?1";
+                    }
+                    if ($scope.temperature <= 50) {
+                        $scope.image = 'http://i.imgur.com/bFYsQ5L.png';
+                    }
+                    if ($scope.temperature <= 30) {
+                        $scope.image = 'http://cdn.instapop.com/assets/memes/Magnum%20P.I./4509/original.jpeg';
+                    }
+                    if ($scope.temperature <= 10) {
+                        $scope.image = 'http://i.imgur.com/JBUX0Av.jpg?1';
+                    }
+                    if ($scope.temperature <= 0) {
+                        $scope.image = 'http://imgur.com/RCTaMi6';
+                    }
+
+                } else if (format === 'Celsius') {
+
+                    if ($scope.temperature <= 32) {
+                        $scope.image = 'http://cdn.meme.am/instances/500x/61742507.jpg';
+                    }
+                    if ($scope.temperature <= 21) {
+                        $scope.image = "http://i.imgur.com/AVWau0L.jpg?1";
+                    }
+                    if ($scope.temperature <= 10) {
+                        $scope.image = 'http://i.imgur.com/bFYsQ5L.png';
+                    }
+                    if ($scope.temperature <= -1) {
+                        $scope.image = 'http://cdn.instapop.com/assets/memes/Magnum%20P.I./4509/original.jpeg';
+                    }
+                    if ($scope.temperature <= -12) {
+                        $scope.image = 'http://i.imgur.com/JBUX0Av.jpg?1';
+                    }
+                    if ($scope.temperature <= -17) {
+                        $scope.image = 'http://imgur.com/RCTaMi6';
+                    }
+
+                } else {
+                    if ($scope.temperature <= 305) {
+                        $scope.image = 'http://cdn.meme.am/instances/500x/61742507.jpg';
+                    }
+                    if ($scope.temperature <= 294) {
+                        $scope.image = "http://i.imgur.com/AVWau0L.jpg?1";
+                    }
+                    if ($scope.temperature <= 283) {
+                        $scope.image = 'http://i.imgur.com/bFYsQ5L.png';
+                    }
+                    if ($scope.temperature <= 272) {
+                        $scope.image = 'http://cdn.instapop.com/assets/memes/Magnum%20P.I./4509/original.jpeg';
+                    }
+                    if ($scope.temperature <= 260) {
+                        $scope.image = 'http://i.imgur.com/JBUX0Av.jpg?1';
+                    }
+                    if ($scope.temperature <= 255) {
+                        $scope.image = 'http://imgur.com/RCTaMi6';
+                    }
+                }
             }, function errorCallback(response) {
                 console.log("Got error!", response);
             });
         }, 1000);
+
     };
 });
