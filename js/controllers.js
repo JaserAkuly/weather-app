@@ -42,6 +42,6 @@ weatherApp.controller('weatherCtrl', function ($scope, $http) {
             }, function errorCallback(response) {
                 console.log("Got error!", response);
             });
-        }, 1000);
+        }, 60000);
     };
 });
