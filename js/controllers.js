@@ -9,7 +9,16 @@ weatherApp.controller('weatherCtrl', function ($scope) {
     $scope.user = {};
 
     $scope.checkWeather = function(loc) {
-        console.log(loc);
         $scope.location_entered = loc;
+
+        //retrieve weather data from the website adding + location the user provided above
+        $http({
+            method: 'GET',
+            url: 'http://api.openweathermap.org/data/2.5/weather?&APPID=7c99bd12f8e57f1557fe0472e9ea0a64&q=' + loc
+        }).then(function successCallback(response) {
+            console.log("Got success!", response);
+        }, function errorCallback(response) {
+            console.log("Got error!", response);
+        });
     };
 });
