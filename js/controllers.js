@@ -4,7 +4,7 @@
 
 var weatherApp = angular.module('weatherApp', []);
 
-weatherApp.controller('weatherCtrl', function ($scope) {
+weatherApp.controller('weatherCtrl', function ($scope, $http) {
     $scope.hello = 'Hi!';
     $scope.user = {};
 
