@@ -32,14 +32,16 @@ weatherApp.controller('weatherCtrl', function ($scope, $http) {
 
 
         //retrieve weather data from the website adding + location the user provided above
-        $http({
-            method: 'GET',
-            url: url
-        }).then(function successCallback(response) {
-            console.log("Got success!", response);
-            $scope.temperature = response.data.main.temp;
-        }, function errorCallback(response) {
-            console.log("Got error!", response);
-        });
+        setInterval(function () {
+            $http({
+                method: 'GET',
+                url: url
+            }).then(function successCallback(response) {
+                console.log("Got success!", response);
+                $scope.temperature = response.data.main.temp;
+            }, function errorCallback(response) {
+                console.log("Got error!", response);
+            });
+        }, 1000);
     };
 });
