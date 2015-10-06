@@ -7,6 +7,13 @@
 <body ng-controller="weatherCtrl">
 <span>{{hello}}</span>
 
+<form>
+    <input model="location" type="text"/>
+    <input ng-click="checkWeather(location)" type="button" value="Check my location!"/>
+</form>
+
+<span>You entered location: {{location_entered}}</span>
+
 <!--<ul>
     <li ng-repeat="phone in phones">
         <span>{{phone.name}}</span>
