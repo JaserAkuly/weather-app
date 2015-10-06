@@ -4,21 +4,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="js/controllers.js"></script>
+
+
 </head>
 <body ng-controller="weatherCtrl">
 <div class="container">
-    <form>
+
+    <div class="col-lg-12 text-center">
+        <h1 class="section-title">Weather <span>App</span></h1>
+    </div>
+
+    <form class="j-forms">
+
+        <label>Please select from the following 5 Cities:
+            <select ng-model="location">
+                <option selected value="Dallas">Dallas</option>
+                <option value="Denver">Denver</option>
+                <option value="New York">New York</option>
+                <option value="Las Vegas">Las Vegas</option>
+                <option value="Los Angeles">Los Angeles</option>
+            </select>
+        </label>
         <label>
-            City:
+            Or Enter In a City:
             <input ng-model="location" type="text" />
-        </label><br/>
+        </label>
+        <hr>
         <label>
-            OR, enter ZIP Code:
+            Or, enter ZIP Code:
             <input ng-model="zip" type="text" /> Country: <input ng-model="country" type="text"/>
-        </label><br/>
+        </label>
+        <hr>
+
         <label>Select weather format:
             <select ng-model="format" ng-init="format='Fahrenheit'">
                 <option selected value="Fahrenheit">Fahrenheit</option>
@@ -26,14 +47,20 @@
                 <option value="Kelvin">Kelvin</option>
             </select>
         </label>
+
         <br/>
 
-        <input ng-click="checkWeather(location, zip, country, format)" type="button" value="Check my location!" />
+        <input class="btn" ng-click="checkWeather(location, zip, country, format)" type="button" value="Check my location!"/>
     </form>
+
+
 </div>
 <!--<span>You entered location: {{location_entered}}</span>!-->
 <br/>
-<span>The temperature is: {{temperature}}</span>
+<div class="col-lg-12 text-center">
+    <h1 class="section-title">The Temperature is: <span>{{temperature}}</span></h1>
+</div>
+
 
 <!-- <ul>
     <li ng-repeat="phone in phones">

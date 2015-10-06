@@ -5,13 +5,13 @@
 var weatherApp = angular.module('weatherApp', []);
 
 weatherApp.controller('weatherCtrl', function ($scope, $http) {
-    $scope.hello = 'Hi!';
     $scope.user = {};
 
     $scope.checkWeather = function (loc, zip, country, format) {
         $scope.location_entered = loc;
+        console.log("Here is your location!", loc);
 
-        var url = 'http://api.openweathermap.org/data/2.5/weather?&APPID=7c99bd12f8e57f1557fe0472e9ea0a64&q=' + loc;
+        var url = 'http://api.openweathermap.org/data/2.5/weather?&APPID=7c99bd12f8e57f1557fe0472e9ea0a64&q=';
 
         //change how they generate the url
         if (loc !== undefined) {
@@ -42,6 +42,6 @@ weatherApp.controller('weatherCtrl', function ($scope, $http) {
             }, function errorCallback(response) {
                 console.log("Got error!", response);
             });
-        }, 60000);
+        }, 1000);
     };
 });
