@@ -14,11 +14,10 @@
     </label><br/>
     <label>
         OR, enter ZIP Code:
-        <input ng-model="zip" type="text" /> <input ng-model="country" type="text"/>
+        <input ng-model="zip" type="text" /> Country: <input ng-model="country" type="text"/>
     </label><br/>
     <label>Select weather format:
-        <select ng-model="format">
-            <option>Please select</option>
+        <select ng-model="format" ng-init="format='Fahrenheit'">
             <option selected value="Fahrenheit">Fahrenheit</option>
             <option value="Celsius">Celsius</option>
             <option value="Kelvin">Kelvin</option>
