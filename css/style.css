@@ -1,0 +1,76 @@
+input {
+    border: 3px solid #bbbbbb;
+    margin-left: 15px;
+}
+.j-forms input {
+    color: #000000;
+    font-size: 18px;
+}
+
+.j-forms label {
+    display:block;
+    color:white;
+    font-size: 18px;
+    font-weight:normal;
+    text-align:left;
+    margin-bottom:20px;
+    margin-left: 5px;
+}
+
+.btn {
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    border: none;
+    text-transform: capitalize;
+    -webkit-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -webkit-border-radius: 0;
+    border-radius:0;
+}
+
+
+body{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    height: 80%;
+    background: #222d33;
+    border-radius: 4px;
+    box-shadow: 0 10px 60px #08151d;
+}
+
+.section-title span{
+    font-weight: 300;
+    color:#f99200;
+    margin-bottom: 40px;
+    margin-top: -30px;
+    font-size: 34px;
+}
+
+h1 {
+    font-size: 34px;
+    line-height: 44px;
+    margin: 0 0 44px 0;
+    color: white;
+}
+
+.temp span{
+    font-weight: 300;
+    color:#f99200;
+    margin-bottom: 40px;
+    margin-top: -30px;
+    font-size: 34px;
+}
