@@ -17,7 +17,7 @@ weatherApp.controller('weatherCtrl', function ($scope, $http) {
         if (loc !== undefined) {
             url += '&q=' + loc;
         } else if (zip !== undefined && country !== undefined) {
-            url += 'zip=' + zip + ',' + country;
+            url += '&zip=' + zip + ',' + country;
         } else {
             alert("Error, please provide either city or zip & country!");
             return;
