@@ -20,7 +20,10 @@
 
     <form class="j-forms">
 
-        <label>Please select from the following 5 Cities:
+
+        <div class="form-group">
+
+            <label>Please select from the following 5 Cities:
             <select ng-model="location">
                 <option selected value="Dallas">Dallas</option>
                 <option value="Denver">Denver</option>
@@ -29,15 +32,12 @@
                 <option value="Los Angeles">Los Angeles</option>
             </select>
         </label>
-        <label>
-            Or Enter In a City:
-            <input ng-model="location" type="text" />
-        </label>
-        <hr>
-        <label>
-            Or, enter ZIP Code:
-            <input ng-model="zip" type="text" /> Country: <input ng-model="country" type="text"/>
-        </label>
+            <label>
+                Or Enter In a City:
+                <input ng-model="location" type="text" />
+            </label>
+        </div>
+
         <hr>
 
         <label>Select weather format:
@@ -50,7 +50,6 @@
 
         <br/>
 
-        <input class="btn" ng-click="checkWeather(location, zip, country, format)" type="button" value="Check my location!"/>
     </form>
 
 
@@ -58,7 +57,9 @@
 <!--<span>You entered location: {{location_entered}}</span>!-->
 <br/>
 <div class="col-lg-12 text-center">
-    <h1 class="section-title">The Temperature is: <span ng-model="temperature">{{temperature}}</span></h1>
+    <h1 class="section-title">The Max Temperature is: <span ng-model="temperature_max" ng-cloak>{{temperature_max}}</span></h1>
+    <h1 class="section-title">The Min Temperature is: <span ng-model="temperature_min" ng-cloak>{{temperature_min}}</span></h1>
+    <h1 class="section-title">The Wind Speed is: <span ng-model="windspeed" ng-cloak>{{windspeed}}</span></h1>
 </div>
 
 
@@ -66,7 +67,7 @@
 <div class="row">
 
     <div class="col-lg-12">
-        <img ng-src="{{ image }}" class="img-responsive img-thumbnail"  ng-show="image"/>
+        <img ng-src="{{ image }}" class="img-responsive img-thumbnail"  ng-show="image" ng-cloak/>
     </div>
 </div>
 
