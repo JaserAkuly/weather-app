@@ -5,71 +5,212 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css"/>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="js/controllers.js"></script>
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
 </head>
 <body ng-controller="weatherCtrl">
+
+<!-- Navigation -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Weather Application</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
 <div class="container">
 
-    <div class="col-lg-12 text-center">
-        <h1 class="section-title">Weather <span>App</span></h1>
-    </div>
+    <!-- Jumbotron Header -->
+    <header class="jumbotron">
 
-    <form class="j-forms">
-
-
-        <div class="form-group">
-
-            <label>Please select from the following 5 Cities:
-            <select ng-model="location">
-                <option selected value="Dallas">Dallas</option>
-                <option value="Denver">Denver</option>
-                <option value="New York">New York</option>
-                <option value="Las Vegas">Las Vegas</option>
-                <option value="Los Angeles">Los Angeles</option>
-            </select>
-        </label>
-            <label>
-                Or Enter In a City:
-                <input ng-model="location" type="text" />
-            </label>
+        <div class="col-lg-12 text-center">
+            <h1 class="section-title">Weather<span> App</span></h1>
         </div>
 
-        <hr>
+        <form class="form-inline col-md-12">
+            <div class="form-group">
+                <label>Please select from the following 5 Cities:</label>
+                <select ng-model="location">
+                    <option selected value="Dallas">Dallas</option>
+                    <option value="Denver">Denver</option>
+                    <option value="New York">New York</option>
+                    <option value="Las Vegas">Las Vegas</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Or Enter A City: </label>
+                <input ng-model="location" type="text"/>
+            </div>
 
-        <label>Select weather format:
-            <select ng-model="format" ng-init="format='Fahrenheit'">
-                <option selected value="Fahrenheit">Fahrenheit</option>
-                <option value="Celsius">Celsius</option>
-                <option value="Kelvin">Kelvin</option>
-            </select>
-        </label>
+            <div class="form-group">
+                <label>Select weather format:
+                    <select ng-model="format" ng-init="format='Fahrenheit'">
+                        <option selected value="Fahrenheit">Fahrenheit</option>
+                        <option value="Celsius">Celsius</option>
+                        <option value="Kelvin">Kelvin</option>
+                    </select>
+                </label>
+            </div>
+        </form>
+        
 
-        <br/>
+    </header>
 
-    </form>
+    <hr>
 
+    <div class="col-lg-12 text-center">
+        <!--<span>You entered location: {{location_entered}}</span>!-->
+        <h1 class="section-title">The Max Temperature is: <span ng-model="temperature_max"
+                                                                ng-cloak>{{temperature_max}}</span></h1>
 
-</div>
-<!--<span>You entered location: {{location_entered}}</span>!-->
-<br/>
-<div class="col-lg-12 text-center">
-    <h1 class="section-title">The Max Temperature is: <span ng-model="temperature_max" ng-cloak>{{temperature_max}}</span></h1>
-    <h1 class="section-title">The Min Temperature is: <span ng-model="temperature_min" ng-cloak>{{temperature_min}}</span></h1>
-    <h1 class="section-title">The Wind Speed is: <span ng-model="windspeed" ng-cloak>{{windspeed}}</span></h1>
-</div>
+        <h1 class="section-title">The Min Temperature is: <span ng-model="temperature_min"
+                                                                ng-cloak>{{temperature_min}}</span></h1>
 
-
-<!-- ANIMALS =========================================================== -->
-<div class="row">
-
-    <div class="col-lg-12">
-        <img ng-src="{{ image }}" class="img-responsive img-thumbnail"  ng-show="image" ng-cloak/>
+        <h1 class="section-title">The Wind Speed is: <span ng-model="windspeed" ng-cloak>{{windspeed}}</span></h1>
     </div>
+
+
+    <!-- ANIMALS =========================================================== -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <img ng-src="{{ image }}" class="img-responsive img-thumbnail" ng-show="image" ng-cloak/>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Latest Features</h3>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Page Features -->
+    <div class="row text-center">
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+
+                <div class="caption">
+                    <h3>Feature Label</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                    <p>
+                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More
+                        Info</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+
+                <div class="caption">
+                    <h3>Feature Label</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                    <p>
+                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More
+                        Info</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+
+                <div class="caption">
+                    <h3>Feature Label</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                    <p>
+                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More
+                        Info</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+
+                <div class="caption">
+                    <h3>Feature Label</h3>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                    <p>
+                        <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More
+                        Info</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Your Website 2014</p>
+            </div>
+        </div>
+    </footer>
+
 </div>
+<!-- /.container -->
+
 
 </body>
 </html>

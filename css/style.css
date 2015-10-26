@@ -7,14 +7,9 @@ input {
     font-size: 18px;
 }
 
-.j-forms label {
-    display:block;
+label {
     color:white;
-    font-size: 18px;
-    font-weight:normal;
-    text-align:left;
-    margin-bottom:20px;
-    margin-left: 5px;
+    margin-left: 15px;
 }
 
 .btn {
@@ -35,26 +30,15 @@ input {
 
 
 body{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    right: auto;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    width: 90%;
-    height: 80%;
     background: #222d33;
     border-radius: 4px;
     box-shadow: 0 10px 60px #08151d;
+    margin-top: 55px;
 }
 
 .section-title span{
     font-weight: 300;
-    color:#f99200;
+    color:#2ecc71;
     margin-bottom: 40px;
     margin-top: -30px;
     font-size: 34px;
@@ -69,7 +53,20 @@ h1 {
 
 .temp span{
     font-weight: 300;
-    color:#f99200;
+    color:#2ecc71;
+    margin-bottom: 40px;
+    margin-top: -30px;
+    font-size: 34px;
+}
+
+.jumbotron {
+    background-color: #222d33;
+    border: 1px dashed #2ecc71;
+}
+
+.jumbotron h1{
+    font-weight: 300;
+    color: #ffffff;
     margin-bottom: 40px;
     margin-top: -30px;
     font-size: 34px;
